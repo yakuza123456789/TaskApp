@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.e.taskapp.ui.home.HomeFragment"
+        android:name="com.e.taskapp.ui.home.TaskFragment"
         android:label="@string/title_task"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_task" >
         <action
             android:id="@+id/action_navigation_home_to_formFragment"
             app:destination="@id/formFragment" />
