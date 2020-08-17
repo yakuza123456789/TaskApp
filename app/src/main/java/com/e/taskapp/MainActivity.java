@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity implements ImageListener {
 
     final int REQUEST_GALlERY = 4;
 
+    boolean isTrue;
+
     CircleImageView circleImageView;
     NavController navController;
     AppBarConfiguration appBarConfiguration;
@@ -40,9 +42,16 @@ public class MainActivity extends AppCompatActivity implements ImageListener {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
+                R.id.navigation_home, R.id.navigation_dashboard, R.id.boardFragment, R.id.navigation_notifications)
                 .build();
         navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+
+//        boolean isShown = new Prefs(this).isShown();
+//        if (!isShown)
+
+        navController.navigate(R.id.boardFragment);
+
+
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
         navController.addOnDestinationChangedListener(new NavController.OnDestinationChangedListener() {
